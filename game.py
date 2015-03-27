@@ -9,7 +9,7 @@ red = (255,0,0)
 green = (0,155,0)
 display_width = 800              #windows sizes
 display_height  = 600
-
+AppleThickness = 30
 gameDisplay = pygame.display.set_mode((display_width,display_height)) ##surface object
 pygame.display.set_caption('Slither')                  #game name
 
@@ -103,8 +103,9 @@ def gameLoop():                                       #starts the game loop wher
 
 
         
-        gameDisplay.fill(white)                                                              #filling the screen white for the game
-        pygame.draw.rect(gameDisplay, red, [randAppleX, randAppleY, block_size, block_size])           #drawing the apple red from random predefined coordinates rounded to the nearest 10
+        gameDisplay.fill(white)
+                                                                                      #filling the screen white for the game
+        pygame.draw.rect(gameDisplay, red, [randAppleX, randAppleY, AppleThickness, AppleThickness])           #drawing the apple red from random predefined coordinates rounded to the nearest 10
 
                                                                                          #lists for the snake getting longer when he eats the apple (not fully implemented yet                                                                 
         snakeHead = []
@@ -132,14 +133,27 @@ def gameLoop():                                       #starts the game loop wher
         
         pygame.display.update()
 
+
+
         
 
 
-        if lead_x == randAppleX and lead_y == randAppleY:                                                  ##loop for collsion detection with the apple if the player meets the apple it will respawn 
-            
-            randAppleX = round(random.randrange(0, display_width-block_size)/10.0)*10.0
-            randAppleY = round(random.randrange(0, display_height-block_size)/10.0)*10.0
-            snakeLength += 1
+        # if lead_x == randAppleX and lead_y == randAppleY:                                                  ##loop for collsion detection with the apple if the player meets the apple it will respawn
+        #
+        # randAppleX = round(random.randrange(0, display_width-block_size)/10.0)*10.0
+        # randAppleY = round(random.randrange(0, display_height-block_size)/10.0)*10.0
+        # snakeLength += 1
+
+
+
+        if lead_x >= randAppleX and lead_x <= randAppleX + AppleThickness:
+            if lead_y >= randAppleY and lead_y <= randAppleY + AppleThickness:
+                randAppleX = round(random.randrange(0, display_width-block_size)/10.0)*10.0
+                randAppleY = round(random.randrange(0, display_height-block_size)/10.0)*10.0
+                snakeLength += 1
+
+
+
         clock.tick(FPS)
          
                 
