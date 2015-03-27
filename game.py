@@ -48,8 +48,8 @@ def gameLoop():                                       #starts the game loop wher
 
     
     
-    randAppleX = round(random.randrange(0, display_width-block_size)/10.0)*10.0           #random apple spawn locations
-    randAppleY = round(random.randrange(0, display_height-block_size)/10.0)*10.0
+    randAppleX = round(random.randrange(0, display_width-block_size)#/10.0)*10.0           #random apple spawn locations
+    randAppleY = round(random.randrange(0, display_height-block_size#)/10.0)*10.0
     
     while not gameExit:
 
@@ -62,7 +62,7 @@ def gameLoop():                                       #starts the game loop wher
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     gameExit = True
-                    gameOver = False 
+                    gameOver = False
                                                     #event handling loop for quit functionality e.g q quits , c restarts
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_q:
@@ -152,8 +152,8 @@ def gameLoop():                                       #starts the game loop wher
 
         if lead_x >= randAppleX and lead_x <= randAppleX + AppleThickness:
             if lead_y >= randAppleY and lead_y <= randAppleY + AppleThickness:
-                randAppleX = round(random.randrange(0, display_width-block_size)/10.0)*10.0
-                randAppleY = round(random.randrange(0, display_height-block_size)/10.0)*10.0
+                randAppleX = round(random.randrange(0, display_width-block_size)#/10.0)*10.0
+                randAppleY = round(random.randrange(0, display_height-block_size)#/10.0)*10.0
                 snakeLength += 1
 
 
