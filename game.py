@@ -114,7 +114,7 @@ def gameLoop():                                       #starts the game loop wher
 
 
         if len(snakeList) > snakeLength:
-            else snakeList [0]
+           del snakeList [0]
             
         for eachSegment in snakeList[:-1]:
             if eachSegment == snakeHead:
