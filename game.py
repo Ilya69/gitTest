@@ -59,7 +59,11 @@ def gameLoop():                                       #starts the game loop wher
             pygame.display.update()
 
 
-            for event in pygame.event.get():                                            #event handling loop for quit functionality e.g q quits , c restarts
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    gameExit = True
+                    gameOver = False 
+                                                    #event handling loop for quit functionality e.g q quits , c restarts
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_q:
                         gameExit = True
