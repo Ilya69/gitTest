@@ -21,7 +21,7 @@ clock = pygame.time.Clock()                          #setting the FPS from pygam
 
 block_size = 20                                  # how big the snake is (its a square so width and height are both 10)
 FPS = 15                                            #framerate of the game
-
+hello = 1232232323
 
 font = pygame.font.SysFont(None, 25)                   #setting font for text used in the game
 
