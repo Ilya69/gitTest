@@ -9,7 +9,7 @@ red = (255,0,0)
 green = (0,155,0)
 display_width = 800              #windows sizes
 display_height  = 600
-AppleThickness = 6  #changed size
+AppleThickness = 30  #changed size
 gameDisplay = pygame.display.set_mode((display_width,display_height)) ##surface object
 pygame.display.set_caption('Slither')                  #game name
 
