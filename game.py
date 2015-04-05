@@ -9,7 +9,7 @@ red = (255,0,0)
 green = (0,155,0)
 display_width = 800              #windows sizes
 display_height  = 600
-AppleThickness = 45  #changed size
+AppleThickness = 6  #changed size
 gameDisplay = pygame.display.set_mode((display_width,display_height)) ##surface object
 pygame.display.set_caption('Slither')                  #game name
 
@@ -19,7 +19,7 @@ pygame.display.set_caption('Slither')                  #game name
 
 clock = pygame.time.Clock()                          #setting the FPS from pygame module
 
-block_size = 29    #changed size                              # how big the snake is (its a square so width and height are both 10)
+block_size = 20    #changed size                              # how big the snake is (its a square so width and height are both 10)
 FPS = 15                                            #framerate of the game
 hello = 1232232323
 
